@@ -1,0 +1,73 @@
+/* Albert Engström-museet – QR-guide.
+   Färger och stil följer sällskapets logga: orangeröd platta, vit fet text, tunn serif i versaler. */
+:root {
+  --rod: #e04622;        /* sällskapets orangeröda */
+  --rod-mork: #b2361a;   /* mörkare, för tryckta knappar och länkar */
+  --papper: #fbf7f0;     /* varmt benvitt, som gammalt papper */
+  --kort: #ffffff;
+  --text: #191919;
+  --dampad: #5a5a5a;
+  --linje: #e3dccf;
+}
+* { box-sizing: border-box; }
+html { font-size: 20px; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--papper);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+}
+a { color: var(--rod-mork); }
+
+.topp { background: var(--rod); color: #fff; padding: 18px 20px 16px; }
+.topp a { color: #fff; text-decoration: none; display: block; max-width: 640px; margin: 0 auto; }
+.topp .namn { display: block; font-weight: 800; font-size: 1.5rem; letter-spacing: 0.02em; text-transform: uppercase; line-height: 1.1; }
+.topp .under { display: block; font-family: Georgia, "Times New Roman", serif; font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase; margin-top: 6px; }
+
+main { max-width: 640px; margin: 0 auto; padding: 24px 20px 48px; }
+.nummer { font-family: Georgia, "Times New Roman", serif; font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rod-mork); margin: 0 0 4px; }
+h1 { font-size: 1.9rem; line-height: 1.15; margin: 0 0 20px; }
+p { margin: 0 0 1.1em; }
+blockquote {
+  margin: 1.4em 0; padding: 4px 0 4px 18px;
+  border-left: 5px solid var(--rod);
+  font-family: Georgia, "Times New Roman", serif; font-style: italic; font-size: 1.05rem;
+}
+blockquote p { margin: 0; }
+
+/* Lyssna-rutan */
+.lyssna { background: var(--kort); border: 1px solid var(--linje); border-radius: 14px; padding: 18px; margin: 0 0 28px; }
+.knapp {
+  display: block; width: 100%; min-height: 68px;
+  border: 0; border-radius: 12px; padding: 16px 20px;
+  background: var(--rod); color: #fff;
+  font: inherit; font-size: 1.25rem; font-weight: 700;
+  text-align: center; text-decoration: none; cursor: pointer;
+}
+.knapp:active, .knapp[aria-pressed="true"] { background: var(--rod-mork); }
+.knapp:focus-visible, a:focus-visible { outline: 4px solid var(--text); outline-offset: 3px; }
+.tips { font-size: 0.85rem; color: var(--dampad); margin: 12px 0 0; text-align: center; }
+audio { display: block; width: 100%; margin-top: 14px; }
+.js audio[hidden] { display: none; }
+
+/* Startsidans lista */
+.stationer { list-style: none; margin: 24px 0 0; padding: 0; }
+.stationer li { margin: 0 0 14px; }
+.stationer a {
+  display: flex; align-items: center; gap: 16px; min-height: 76px;
+  background: var(--kort); border: 1px solid var(--linje); border-radius: 14px;
+  padding: 14px 18px; color: var(--text); text-decoration: none; font-size: 1.15rem; font-weight: 700;
+}
+.stationer .siffra {
+  flex: none; width: 46px; height: 46px; border-radius: 50%;
+  background: var(--rod); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+}
+
+.fot-nav { display: flex; gap: 12px; margin-top: 36px; }
+.fot-nav a {
+  flex: 1; min-height: 60px; display: flex; align-items: center; justify-content: center; text-align: center;
+  border: 2px solid var(--rod-mork); border-radius: 12px; padding: 10px 12px;
+  color: var(--rod-mork); text-decoration: none; font-weight: 700;
+}
+footer { max-width: 640px; margin: 0 auto; padding: 0 20px 40px; font-size: 0.8rem; color: var(--dampad); }
